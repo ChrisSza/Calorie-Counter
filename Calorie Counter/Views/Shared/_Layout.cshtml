@@ -1,0 +1,70 @@
+﻿@using Calorie_Counter.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Calorie Counter</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Comfortaa:wght@300;400&family=Lobster&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/Site.css" />
+
+</head>
+<body>
+    <div class="navbar navbar-default bg-1" >
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="@Url.Action("Index", "Home")" class="navbar-brand ">
+
+                </a>
+            </div>
+            <div class="navbar-collapse collapse text-center">
+                <ul class="nav navbar-nav text-center">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Understanding Calories", "About", "Home")</li>
+                    <li>@Html.ActionLink("Podcasts", "Podcasts", "Home")</li>
+                    <li>@Html.ActionLink("Calorie Counter", "Index", "Foods")</li>
+                    <li>@Html.ActionLink("Help", "Help", "Home")</li>
+
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+    </div>
+    <footer class="container-fluid text-center">
+        <hr />
+        <div class="row">
+            @if (Request.IsAuthenticated)
+            {
+                <div class="col-sm-3">Developer: Christopher Szafranek</div>
+                <div class="col-sm-3">Developer: Christopher Szafranek <span class="glyphicon glyphicon-copyright-mark"></span>@DateTime.Now.Year</div>
+                <div class="col-sm-3">@Html.ActionLink("Contact Us", "Contact", "Home", new { area = "" }, new { @class = "body" })</div>
+
+                <div class="col-sm-3"> Your Daily Calorie Count: @ViewBag.TotalCalorie </div>
+            }
+            else
+            {
+                <div class="col-sm-4">Developer: Christopher Szafranek</div>
+                <div class="col-sm-4">Developer: Christopher Szafranek <span class="glyphicon glyphicon-copyright-mark"></span>@DateTime.Now.Year</div>
+                <div class="col-sm-4">@Html.ActionLink("Contact Us", "Contact", "Home", new { area = "" }, new { @class = "body" })</div>
+            }
+
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, intial-scale=1" />
+    <meta charset="utf-8">
+    <title>Calorie Counter</title>
+    <link rel="stylesheet" href="https://maxcdn.boostrapcdn.com/bootstrap.3.4.1/css.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar&family=Comfortaa:wght@300;400&family=Lobster&display=swap" rel="stylesheet">    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style>
+        body {
+            line-height: 1.8;
+            color: #3144f3;
+            padding-top: 0px;
+            padding-bottom: 0px;
+            background-color: #3144f3;
+            font-family: 'Akshar', sans-serif;
+        }
+        .bg-1 {
+            background-color: #0f1449;
+            color: #ffffff;
+            font-family: 'Akshar', sans-serif;
+            font-size: 1.2em;
+        }
+        .bg-2 {
+        background-color: #3144f3;
+        }
+        .container-fluid-image {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-family: 'Akshar', sans-serif;
+        }
+        .container-fluid {
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .margin{
+            margin-bottom:45px;
+        }
+
+        a:link{
+            color:white;
+            text-decoration:none;
+            font-size:200%;
+        }
+
+        a:visited {
+            color: white;
+            text-decoration: none;
+            font-size: 200%;
+        }
+
+        a:hover {
+            color: lightblue;
+            text-decoration: none;
+            font-size: 200%;
+        }
+
+        a:active {
+            color: white;
+            text-decoration: none;
+            font-size: 200%;
+        }
+        .img
+        {
+            width:30%;
+            height:20%;
+            border:solid;
+            border-radius:2%;
+
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid bg-1 text-center">
+        <h1>CALORIE COUNTER</h1>
+
+    </div>
+    <div class="text-center container-fluid-image bg-2">
+        <h2> For all your Calorie Counting Needs!!!</h2>
+        <br />
+        <a href="/Home/Index">
+            <img class="img" src="~/Images/splash_screen_picture.jpg" />
+        </a>
+
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+</body>
+</html>
